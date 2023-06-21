@@ -1,17 +1,17 @@
 package example;
 
 import arc.*;
+import arc.graphics.Color;
 import arc.util.*;
-import mindustry.*;
-import mindustry.content.*;
-import mindustry.game.EventType.*;
-import mindustry.gen.*;
+import example.content.ExampleItems;
 import mindustry.mod.*;
+import mindustry.type.Item;
 import mindustry.ui.dialogs.*;
+import mindustry.game.EventType.*;
 
-public class ExampleJavaMod extends Mod{
-
-    public ExampleJavaMod(){
+@SuppressWarnings("unused")
+public class ExampleJavaMod extends Mod {
+    public ExampleJavaMod() {
         Log.info("Loaded ExampleJavaMod constructor.");
 
         //listen for game load event
@@ -29,8 +29,9 @@ public class ExampleJavaMod extends Mod{
     }
 
     @Override
-    public void loadContent(){
-        Log.info("Loading some example content.");
+    public void loadContent() {
+        ExampleItems.example = new Item("example", Color.red) {{
+            this.hardness = 666;
+        }};
     }
-
 }

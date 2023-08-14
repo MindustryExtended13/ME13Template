@@ -8,11 +8,6 @@ sourceSets.main {
     resources.srcDirs = ["assets"]
 }
 
-repositories {
-    mavenCentral()
-    maven{ url 'https://www.jitpack.io' }
-}
-
 ext {
     //the build number that this mod is made for
     mindustryVersion = 'v145'
@@ -24,7 +19,7 @@ ext {
             name = name.substring(1);
         }
 
-        return "com.github.MindustryExtended13.Me13Core:$name:v1.6"
+        return "com.github.MindustryExtended13.Me13Core:$name:533faaf615"
     }
 }
 
@@ -81,6 +76,10 @@ allprojects {
         mavenCentral()
 
         maven {
+            url 'https://maven.xpdustry.com/anuken'
+        }
+
+        maven {
             url 'https://www.jitpack.io'
         }
     }
@@ -118,10 +117,6 @@ dependencies {
 
     //ME13 components
     //to implement use "implementation modCore(':module')"
-
-    //Informatronics integration
-    //implementation "com.github.MindustryExtended13.informatronics:tools:1.0"
-    //compileOnly "com.github.MindustryExtended13.informatronics:integration:1.0"
 }
 
 //force arc version
